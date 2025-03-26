@@ -19,18 +19,9 @@ public class m_dbinfo {
 		//database 연결하는 명령어 
 		Class.forName(db_driver);
 		Connection con = DriverManager.getConnection(db_url,db_user,db_passwd);
-		System.out.println(con);
-		
-	
-		
-		
-		
-		
-		return null;
-		
-		
-	}
-	
+		//System.out.println(con);	
+		return con;		
+	}	
 }
 
 /*

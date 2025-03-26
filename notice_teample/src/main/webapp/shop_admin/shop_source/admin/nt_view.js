@@ -13,7 +13,8 @@ function noticeok() {
         var newnotice = document.createElement("li");
         newnotice.textContent = "공지사항 제목: " + subject;
         noticelist.insertBefore(newnotice, noticelist.firstChild); // 새 공지사항을 리스트의 첫 번째 항목으로 추가
-    }else{
+    }
+/*else{
 
     // 파일 사이즈 체크
     var maxsize = 2 * 1024 * 1024; // 2MB 사이즈 제한
@@ -25,9 +26,10 @@ function noticeok() {
         $(nfile).val(''); // 업로드한 파일 제거
         return false; // 파일 선택을 취소하고 폼 제출을 막음
     }
-}
+*/
+
     // 폼 유효성 검사
-    if (frm.subject.value == "") {
+   else if (frm.subject.value == "") {
         alert("공지사항 제목을 입력하세요");
         return false; // 제목이 비어 있으면 폼 제출을 막기
     } else if (frm.writer.value == "") {
@@ -41,6 +43,7 @@ function noticeok() {
     // 모든 검사를 통과하면 폼을 수동으로 제출
     frm.submit();
 }
+
 
 function noticelist() {
     window.location.href = "./noticelist.do"; // 공지목록 페이지로 이동

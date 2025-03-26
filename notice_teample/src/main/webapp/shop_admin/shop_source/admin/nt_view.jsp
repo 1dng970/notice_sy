@@ -1,10 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!-- /*
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 등록 페이지</title>
+    <link rel="stylesheet" type="text/css" href="./css/basic.css">
+    <link rel="stylesheet" type="text/css" href="./css/login.css?v=10">
+    <link rel="stylesheet" type="text/css" href="./css/main.css?v=10">
+    <link rel="stylesheet" type="text/css" href="./css/notice.css?v=10">
+    <link rel="icon" href="./img/logo.png" sizes="128x128">
+    <link rel="icon" href="./img/logo.png" sizes="64x64">
+    <link rel="icon" href="./img/logo.png" sizes="32x32">
+    <link rel="icon" href="./img/logo.png" sizes="16x16">
+</head>      
+<main class="maincss">
 <section>
     <p>공지사항 등록페이지</p>
-<form id="frm" method="post" action="./nt_notice_writeok.do" enctype="multipart/form-data"> 
+<form id="frm" method="post" action="./notice_writeok.do" enctype="multipart/form-data"> 
 <div class="write_view">
 <ul>
     <li>공지사항 여부</li>
@@ -38,11 +51,13 @@
 </ul>
 </div>
 <div class="board_btn">
-    <button class="border_del" onclick="location.href='공지목록_페이지_URL'">공지목록</button>
+    <button class="border_del" onclick="location.href='notice_list.jsp'">공지목록</button>
     <button type="button"  class="border_add" onclick="noticeok()">공지등록</button>
 </div>
 </form>  
 </section>
- <script src ="../../shop_source/admin/nt_view.js?v=2"></script>   
+ 
+</main>
+ <script src ="../../shop_source/admin/nt_view.js?v=3"></script>   
  <!-- 제이쿼리 업로드 -->
  

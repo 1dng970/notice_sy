@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>notice_teample</display-name>
-  
+ 
  
 <servlet>
 <servlet-name>notice_writeok</servlet-name>
 <servlet-class>notice.notice_writeok</servlet-class>
 </servlet>
-
 <servlet-mapping>
 <servlet-name>notice_writeok</servlet-name>
 <url-pattern>/shop_admin/shop_source/admin/notice_writeok.do</url-pattern>
 </servlet-mapping> 
-  
   
 </web-app>
