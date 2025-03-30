@@ -3,6 +3,16 @@
   <display-name>notice_teample</display-name>
  
  
+ <servlet>
+<servlet-name>notice_list</servlet-name>
+<servlet-class>notice.notice_list</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>notice_list</servlet-name>
+<url-pattern>/shop_admin/shop_source/admin/notice_list.do</url-pattern>
+</servlet-mapping> 
+ 
 <servlet>
 <servlet-name>notice_writeok</servlet-name>
 <servlet-class>notice.notice_writeok</servlet-class>
