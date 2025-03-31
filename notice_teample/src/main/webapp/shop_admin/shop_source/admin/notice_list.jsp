@@ -4,7 +4,7 @@
  <%
  
  ArrayList<ArrayList<String>> notice_teample = (ArrayList<ArrayList<String>>)request.getAttribute("result");
-out.print(notice_teample);
+
 //페이지번호 생성
 
 String total_page = notice_teample.get(0).get(5);
@@ -15,6 +15,7 @@ String total_page = notice_teample.get(0).get(5);
 2. 데이터베이스에 있는 데이터의 총 개수 / 한 페이지당 개수 (소수점)
 3. Math.ceil 사용하는 이유는 반올림으로 페이지가 추가되도록 합니다.
 */
+
 
 int pg = 1;
 if(total_page!=null || total_page.equals("")){
@@ -61,28 +62,30 @@ if(pno==null || pno.equals("1")){
     <div class="subpage_view">
     <ul>
         <li><input type="checkbox"></li>
-        <li >NO</li>
+        <li>NO</li>
         <li>제목</li>
         <li>글쓴이</li>
         <li>날짜</li>
         <li>조회</li>
     </ul>
  <%
+ 
  int f;
  //리스트 출력 번호를 총 데이터 개수로 처리
  //총 데이터 개수 - ((페이지 번호 - 1) * 한 페이지당 출력개수)
   int total =Integer.parseInt(total_page)- ((Integer.parseInt(pno) - 1) * 5);
   for(f=0;f<notice_teample.size();f++){
 	  
- %>   
+	  
+	  %>   
     
     <ol>
         <li><input type="checkbox"></li>
-        <li>1</li>
-        <li>테스트 제목</li>
-        <li>관리자</li>
-        <li>2025-02-17</li>
-        <li>100</li>
+        <li onclick="notice_view('<%=notice_teample.get(f).get(0)%>')"><%=notice_teample.get(f).get(0)%></li>
+        <li><%=notice_teample.get(f).get(1)%></li>
+        <li><%=notice_teample.get(f).get(2)%></li>
+        <li><%=notice_teample.get(f).get(4).substring(0, 10)%></li>
+        <li><%=notice_teample.get(f).get(3)%></li>
     </ol>
   <%
 	total--;
@@ -92,26 +95,28 @@ if(pno==null || pno.equals("1")){
         <li id="notice_list">등록된 공지 내용이 없습니다.</li>
     </ol>
     <tr>
-	<%
-		int w = 1;
-		while(w <= pg){
-	%>
-		<td width=20 height=20 align="center"><a href="./notice_list.do?pageno=<%=w%>"><%=w%></td>
-	<%
-			w++;
-		}
-	%>
+
 	</tr>
     </div>
     <div class="board_btn">
         <button class="border_del">공지삭제</button>
-        <button class="border_add">공지등록</button>
+        <button type="button" class="border_add" onclick="location.href='notice_write.html'">공지등록</button>
     </div>
+    
+    
     <div class="border_page">
         <ul class="pageing">
             <li><img src="./ico/double_left.svg"></li>
             <li><img src="./ico/left.svg"></li>
-            <li>1</li>
+            <% 
+	         int w = 1;
+	         while(w <= pg){
+            %>
+            <li><a href="./notice_list.do?pageno=<%=w%>"><%=w%></a></li>
+            <%
+	          w++;
+	         }
+             %>
             <li><img src="./ico/right.svg"></li>
             <li><img src="./ico/double_right.svg"></li>
         </ul>
@@ -125,7 +130,7 @@ if(pno==null || pno.equals("1")){
 </body>
 <script>
 function notice_view(no){
-	// 해당 게시물의 내용 및 펌부파일을 확인할 수 있는 view 페이지
+	// 해당 게시물의 내용 및 첨부파일을 확인할 수 있는 view 페이지
 	location.href="./notice_view.do?nidx="+no;
 }
 </script>

@@ -31,7 +31,7 @@ public class notice_list extends HttpServlet {
 		//jsp로 2차 배열 값 전달
 		request.setAttribute("result", result);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("noitce_list.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("notice_list.jsp");
 		rd.forward(request, response);
 	
 	
