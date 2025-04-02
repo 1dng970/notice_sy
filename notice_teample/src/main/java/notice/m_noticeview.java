@@ -17,7 +17,7 @@ public class m_noticeview {
 	public void viewcount(int nidx) { //조회수
 		try {
 		this.con=this.db.getConnection();
-		System.out.println(this.con);
+
 		//해당 컬럼에 값을 +1씩 증가 시키는 쿼리문
 		this.sql= "update notice_teample set nview=nview+1 where nidx=?";
 		this.ps = this.con.prepareStatement(this.sql);

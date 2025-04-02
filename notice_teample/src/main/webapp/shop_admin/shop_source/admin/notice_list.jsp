@@ -58,10 +58,12 @@ if(pno==null || pno.equals("1")){
 
 <main class="maincss">
 <section>
+<!-- 전체선택시 -->
     <p>공지사항 관리페이지</p>
+<form id="frm" method="post" action="./notice_delete.do" >
     <div class="subpage_view">
     <ul>
-        <li><input type="checkbox"></li>
+        <li><input name="selectall" type="checkbox" value="selectall"  onclick="selectall(this)"></li>
         <li>NO</li>
         <li>제목</li>
         <li>글쓴이</li>
@@ -69,41 +71,42 @@ if(pno==null || pno.equals("1")){
         <li>조회</li>
     </ul>
  <%
- 
+if (notice_teample == null || notice_teample.size() == 0) { %>   
+    <ol class="none_text">
+        <li id="notice_list">등록된 공지 내용이 없습니다.</li>
+    </ol>
+
+ <% } else { 
  int f;
  //리스트 출력 번호를 총 데이터 개수로 처리
  //총 데이터 개수 - ((페이지 번호 - 1) * 한 페이지당 출력개수)
-  int total =Integer.parseInt(total_page)- ((Integer.parseInt(pno) - 1) * 5);
-  for(f=0;f<notice_teample.size();f++){
-	  
-	  
+ /* 게시판번호   */
+  int total =Integer.parseInt(total_page)- ((Integer.parseInt(pno) - 1) * 5); 
+ 
+  for(f=0;f<notice_teample.size();f++){	   
 	  %>   
-    
     <ol>
-        <li><input type="checkbox"></li>
-        <li onclick="notice_view('<%=notice_teample.get(f).get(0)%>')"><%=notice_teample.get(f).get(0)%></li>
+        <li><input name="nidx" type="checkbox" value="<%=notice_teample.get(f).get(0)%>"></li>
+        <li onclick="notice_view('<%=notice_teample.get(f).get(0)%>')"><%=total%></li>
         <li><%=notice_teample.get(f).get(1)%></li>
         <li><%=notice_teample.get(f).get(2)%></li>
         <li><%=notice_teample.get(f).get(4).substring(0, 10)%></li>
         <li><%=notice_teample.get(f).get(3)%></li>
     </ol>
+   
   <%
 	total--;
-	}
-  %>
-    <ol class="none_text">
-        <li id="notice_list">등록된 공지 내용이 없습니다.</li>
-    </ol>
-    <tr>
+    }
+  }%>
 
-	</tr>
-    </div>
+  <br><br>
+  
+    </div>  
     <div class="board_btn">
-        <button class="border_del">공지삭제</button>
-        <button type="button" class="border_add" onclick="location.href='notice_write.html'">공지등록</button>
-    </div>
-    
-    
+        <button class="border_del" onclick="notice_list_info(2)">공지삭제</button>
+        <button type="button" class="border_add" onclick="notice_list_info(1)">공지등록</button>
+    </div>  
+    </form> 
     <div class="border_page">
         <ul class="pageing">
             <li><img src="./ico/double_left.svg"></li>
@@ -128,10 +131,5 @@ if(pno==null || pno.equals("1")){
 </footer>
 <!-- 하단내용 -->
 </body>
-<script>
-function notice_view(no){
-	// 해당 게시물의 내용 및 첨부파일을 확인할 수 있는 view 페이지
-	location.href="./notice_view.do?nidx="+no;
-}
-</script>
+<script src="../../shop_source/admin/nt_list_delete.js?v=2"></script>
 </html>

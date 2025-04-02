@@ -51,13 +51,13 @@
 </ul>
 </div>
 <div class="board_btn">
-    <button type="button"  class="border_del" onclick="location.href='notice_list.jsp'">공지목록</button>
+    <button type="button"  class="border_del" onclick="location.href='notice_list.do'">공지목록</button>
     <button type="button"  class="border_add" onclick="noticeok()">공지등록</button>
 </div>
 </form>  
 </section>
  
 </main>
- <script src ="../../shop_source/admin/nt_view.js?v=4"></script>   
+ <script src ="../../shop_source/admin/nt_write.js?v=4"></script>   
  <!-- 제이쿼리 업로드 -->
  

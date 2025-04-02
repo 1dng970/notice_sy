@@ -22,7 +22,7 @@
 <!-- 상단메뉴  -->
 <!-- 공지등록  -->
 <main class="maincss">
-<%@include file='./nt_view.jsp'%>
+<%@include file='./nt_write.jsp'%>
 </main>
 <!-- 공지등록  -->
 <!-- 하단내용 -->
