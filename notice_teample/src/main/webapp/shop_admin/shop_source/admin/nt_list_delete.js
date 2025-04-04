@@ -19,6 +19,7 @@ function notice_list_info(p) {
     }
   }
 }
+
 function notice_view(no){
 	// 해당 게시물의 내용 및 첨부파일을 확인할 수 있는 view 페이지
 	location.href="./notice_view.do?nidx="+no;

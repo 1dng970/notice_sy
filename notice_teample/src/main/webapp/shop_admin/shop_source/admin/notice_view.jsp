@@ -80,12 +80,21 @@
 <%
 }
 %>
+
 <form id="frm" method="post" action="./notice_delete.do" >
 <input type="hidden" name="nidx" value="<%=views.get(0)%>">
 </form>
+
+ <!--  
+<form id="frm" method="post" action="./notice_delete.do" >
+<input type="hidden" name="nidx" value="<%=views.get(0)%>">
+</form>
+-->
 <div class="board_btn">
     <button type="button" class="border_del" onclick="notice_info(1)" >공지목록</button>
-    <button type="button" class="border_add"  onclick="location.href='notice_edit.jsp?nidx=<%= views.get(0) %>'">공지수정</button>
+    <a href="notice_modify.jsp?nidx=<%=request.getParameter("nidx")%>">
+    <button type="button" class="border_add">공지수정</button>
+    </a>
     <button type="button" class="border_modify" style="margin-left: 8px;" onclick="notice_info(3)">공지삭제</button>
 </div>
 </section>

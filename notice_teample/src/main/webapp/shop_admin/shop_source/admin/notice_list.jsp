@@ -63,7 +63,7 @@ if(pno==null || pno.equals("1")){
 <form id="frm" method="post" action="./notice_delete.do" >
     <div class="subpage_view">
     <ul>
-        <li><input name="selectall" type="checkbox" value="selectall"  onclick="selectall(this)"></li>
+        <li><input name="selectall" type="checkbox" value="selectall" onclick="selectall(this)"></li>
         <li>NO</li>
         <li>제목</li>
         <li>글쓴이</li>
@@ -103,7 +103,7 @@ if (notice_teample == null || notice_teample.size() == 0) { %>
   
     </div>  
     <div class="board_btn">
-        <button class="border_del" onclick="notice_list_info(2)">공지삭제</button>
+        <button type="button" class="border_del" onclick="notice_list_info(2)">공지삭제</button>
         <button type="button" class="border_add" onclick="notice_list_info(1)">공지등록</button>
     </div>  
     </form> 
