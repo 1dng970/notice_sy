@@ -27,9 +27,14 @@ public class notice_list extends HttpServlet {
 		m_noticelist nl = new m_noticelist(Integer.parseInt(pageno));
 		//2차 클래스배열로 저장된 table에 모든 데이터 셋팅 
 		ArrayList<ArrayList<String>> result = nl.db_data();
+		System.out.println(result.size());
+		
 		
 		//jsp로 2차 배열 값 전달
 		request.setAttribute("result", result);
+		request.setAttribute("ea", result.size());
+		
+	
 		
 		RequestDispatcher rd = request.getRequestDispatcher("notice_list.jsp");
 		rd.forward(request, response);

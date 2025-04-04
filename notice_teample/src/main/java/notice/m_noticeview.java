@@ -39,7 +39,7 @@ public class m_noticeview {
 			this.db_data.add(this.rs.getString("texts"));
 			this.db_data.add(this.rs.getString("nview"));
 			this.db_data.add(this.rs.getString("ndate"));
-			//System.out.println("데이터 확인: " + this.db_data); // 데이터 출력
+			System.out.println("데이터 확인: " + this.db_data); // 데이터 출력
 			
 		     }
 			

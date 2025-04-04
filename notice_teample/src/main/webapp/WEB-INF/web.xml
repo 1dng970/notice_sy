@@ -4,13 +4,13 @@
  
  
 <servlet>
-<servlet-name>notice_modify</servlet-name>
-<servlet-class>notice.notice_modify</servlet-class>
+<servlet-name>notice_modifyok</servlet-name>
+<servlet-class>notice.notice_modifyok</servlet-class>
 </servlet> 
  
 <servlet-mapping>
-<servlet-name>notice_modify</servlet-name>
-<url-pattern>/shop_admin/shop_source/admin/notice_modify.do</url-pattern>
+<servlet-name>notice_modifyok</servlet-name>
+<url-pattern>/shop_admin/shop_source/admin/notice_modifyok.do</url-pattern>
 </servlet-mapping> 
  
  

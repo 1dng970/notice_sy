@@ -62,13 +62,13 @@ public class m_noticelist {
 			   this.data.add(this.rs.getString("ndate"));
 			   this.data.add(this.rs.getString("total"));//개시물 전체 개수를 저장한 배열값 
 			   this.alldata.add(this.data);
-			   
-		   }		   
+		   }	
+		  
 		   
 		} 
 		catch (Exception e) {
-		this.alldata = null;
-			
+		//this.alldata = null;
+		 
 		
 		}finally {
 			try {
@@ -76,7 +76,8 @@ public class m_noticelist {
 				this.con.close();
 				
 			} catch (Exception e) {
-			this.alldata = null;
+			//this.alldata = null;
+			
 			}
 			
 		}
